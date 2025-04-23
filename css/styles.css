@@ -1,0 +1,670 @@
+/* styles.css 
+   Project: 
+   Author: 
+   Date: 
+	
+*/
+
+/*google font*/
+
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Open+Sans&family=Raleway&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Mea+Culpa&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville:ital@0;1&family=Bebas+Neue&family=Mea+Culpa&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baskervville+SC&family=Baskervville:ital@0;1&family=Bebas+Neue&family=Mea+Culpa&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
+/*main css*/
+
+
+* {
+  box-sizing: border-box;
+}
+
+.slideslide{
+  position: absolute;    /* 使用绝对定位 */
+  left: 50%;             /* 将元素的左边缘定位在父容器的中间 */
+  top: 50%;              /* 将元素的顶部定位在父容器的中间 */
+  transform: translate(-50%, -50%);  /* 调整元素的位置，使其居中 */
+  width: 80%;            /* 设定元素宽度为父容器的80% */
+  max-width: 1200px;     /* 最大宽度 */
+  margin: 0;             /* 确保没有额外的边距 */
+}
+
+img, video {
+  width: 100%;
+  display: block;
+}
+
+audio {
+  display: block;
+}
+
+/*link style*/
+
+a {
+  text-decoration: none;
+  color: darkred;
+}
+
+a:visited {
+  color: gray;
+}
+
+a:hover, a:active {
+  color: darkgray;
+} 
+
+body, html {
+  font-family: 'Lato', sans-serif; 
+}
+
+h1,{
+
+} 
+
+h2, h3, .pullquote {
+  font-family: "Baskervville SC", serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 2em;
+
+}
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: -1;
+  background-color: black;
+  /*max-height: 600px;*/
+}
+
+header img {
+  /* this opacity makes the header image dark so you can read the headline text more easily. remove the opacity if you do not have your headline on top of the image.*/
+  opacity: 0.6;
+}
+
+.title1 {
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  color: white;
+  text-align: center;
+  padding: 3%;
+}
+
+.title1 h1 {
+  font-family: "Meddon";
+  font-size: 5.1em;
+  margin-bottom: -4px;
+}
+
+.title1 h2 {
+  font-size: 2em;
+}
+
+.title1 h3 {
+  margin-top: 10%;
+  font-size: 1.2em;
+  font-style: italic;
+}
+
+.title2 {
+  width: 100%;
+  color: darkslategray;
+  text-align: center;
+  padding: 2px ;
+}
+
+.title2 h1 {
+  font-family: MeaCulpa;
+  font-size: 4.7em;
+  margin-bottom: -4px;
+}
+
+.title2 h2 {
+  font-size: 2em;
+}
+
+.title2 h3 {
+  margin-top: 3%;
+  margin-bottom: 0;
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.content {
+  width: 100%;
+  background-color: white;
+  font-family: times news roman;
+
+}
+
+.maintext {
+  max-width: 640px;
+  margin: auto;
+  color: darkslategray;
+  font-size: 1.2em;
+  line-height: 1.7em;
+  text-align: justify;
+  padding: 1%;
+}
+
+.pullquote {
+  width: 50%;
+  font-size: 1.4em;
+  line-height: 1.6em;
+  font-style: italic;
+  text-align: left;
+}
+
+.name {
+  font-size: 0.7em;
+  text-align: center;
+  line-height: 0.1em;
+  padding-bottom: 30px;
+}
+
+.left {
+  float: left;
+  padding-right: 20px;
+  margin-left: -40px;
+}
+
+.right {
+  float: right;
+  padding-left: 20px;
+  margin-right: -40px;
+}
+
+.floatingpic {
+  width: 50%;
+}
+
+.floatingpic audio {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.floatingcap {
+  margin-top: 0px;
+  font-size:  0.8em;
+  text-align: center;
+  margin-bottom: 0px;
+  line-height: 1.3; 
+}
+
+.sectionhead {
+  text-align: center;
+  color: darkslategray;
+}
+
+.bigphoto {
+  position: relative;
+}
+
+.photocaption {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding-left: 1%;
+  color: white;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.sidebyside {
+  display: flex;
+}
+
+.photoleft {
+    flex-direction: row;
+}
+
+.photoright {
+    flex-direction: row-reverse;
+}
+
+.sidephoto {
+  flex: 2;
+}
+
+.sidecaption {
+  flex: 1;
+  background-color: black;
+  color: white;
+  font-size: 1.2em;
+  display: grid;
+  align-items: center;
+  text-align: center;
+  padding: 20px 40px;
+}
+
+.photogrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 5px;
+}
+
+.gridpic {
+  position: relative;
+}
+
+.gridpic .photocaption {
+  display: none;
+}
+
+.cycle-slideshow {
+  max-width: 700px;
+  margin: auto;
+}
+
+.knightlab {
+  max-width: 700px;
+  margin: auto;
+}
+
+.slidewrapper {
+  position: relative;
+}
+
+.slides {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: -1;
+}
+
+.bottomcredit {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  color: white;
+}
+
+.backgroundimage {
+  height: 100vh;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0px;
+  z-index: -1;
+}
+
+.backgroundimage img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.textbox {
+  max-width: 640px;
+  margin: 100vh auto;
+  background-color: white;
+  color: darkslategray;  
+  padding: 20px;
+}
+
+.googlemap {
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+  max-width: 700px;
+  margin: auto;
+}
+
+.googlemap iframe {
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
+.youtube {
+  max-width: 700px;
+  margin-top: 10px;
+
+  margin: auto;
+  background-color: #527745;
+}
+
+.youtube .maintext{
+  color: #FFFFFF;
+  padding: 5%;
+}
+
+.responsivecontainer {
+  position: relative; 
+  padding-bottom: 56.25%; 
+  padding-top: 30px; 
+  height: 0; 
+  overflow: hidden;
+}
+
+.responsivecontainer iframe, .responsivecontainer object, .responsivecontainer embed { 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
+}
+
+  
+.clickhere {
+  font-style: italic;
+  font-size: 0.7em;
+  text-align: right;
+  padding-right: 1%;
+}
+
+.voxpop {
+  max-width: 700px;
+  margin: auto;
+}
+
+.voxgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.person {
+  border-radius: 5px;
+  box-shadow: 2px 3px 3px lightslategrey;
+  overflow: hidden;
+}
+
+.person audio {
+  width: 100%;
+  display: block;
+}
+
+.headshot {
+  position: relative;
+  text-align: center;
+
+}
+
+.popup {
+  cursor: pointer;
+}
+
+.infographic {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+}
+
+.mySlides img {
+    width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.slidetext {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 12px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+
+/* The dots/bullets/indicators */
+.dots {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  text-align: center;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+ 
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+/*footer */
+
+footer {
+  background-color: black;
+  color: white;
+  padding: 1%;
+  text-align: right;
+}
+
+/*popup modal*/
+
+.overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-y: scroll;
+  display: none;
+  z-index:  10;
+}
+
+.modal {
+  width: 70%;
+  margin: 2% auto;
+}
+
+.closer {
+  position: absolute;
+  right: 1vh;
+  top:  1vh;
+  width: 10%;
+  cursor: pointer;
+}
+
+/*media query for responsive design */
+
+@media only screen and (max-width: 900px) {
+
+  .title1 {
+    top: 5%;
+  }
+
+  .title1 h1 {
+    font-size: 3.5em;
+  }
+
+  .title1 h2 {
+    font-size: 1.5em
+  }
+
+  .title1 h3 {
+    font-size: 1.1em;
+  }
+
+}
+
+
+@media only screen and (max-width: 800px) {
+
+  .pullquote {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    display: none; /* remove this line if you want the pullquotes to display on mobile*/ 
+  }
+
+  .left, .right {
+    margin: 0px;
+    padding: 10px;
+  }
+
+  .floatingpic {
+    width:  100%;
+    margin: 0px;
+    padding:  0px;
+  }
+
+  .popup {
+    margin-bottom: 15px;
+  }
+
+  .popup .floatingcap {
+    display: none;
+  }  
+
+}
+
+
+@media only screen and (max-width: 640px) {
+
+  .title1 {
+    top: 1%;
+  }
+
+  .title1 h1 {
+    font-size: 3em;
+  }
+
+  .title1 h2 {
+    display: none;
+  }
+
+  .title1 h3 {
+    font-size: 0.9em;
+  }
+
+  .title2 h1 {
+    font-size: 2em;
+  }
+
+  .title2 h2 {
+    font-size: 1.3em;
+  }
+
+  .title2 h3 {
+    font-size: 1em;
+  }
+
+  .maintext {
+    font-size: 1.4em;
+    line-height: 1.6em;
+    text-align: left;
+    margin: 0px 15px;
+  }
+
+  .voxgrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .person audio {
+    background-color: black;  
+  }
+
+  .modal {
+    width: 97%;
+    margin: 10% auto;
+  }
+
+  .sidebyside {
+    display: block;
+  }
+
+  .sidecaption {
+    font-size: 1em;
+    padding: 10px 20px;
+  }
+
+  .textbox {
+    margin: 100vh 20px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
