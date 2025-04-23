@@ -4,97 +4,65 @@
    NOTES: Adapted from W3Schools: 
    https://www.w3schools.com/howto/howto_js_slideshow.asp
 
-*/
+$(document).ready(function(){
+    // 遍歷每一個輪播區域
+    $('.slideshow').each(function() {
+        var $carousel = $(this); // 當前輪播
+        var slides = $carousel.find('.mySlides');
+        var dots = $carousel.find('.dot');
+        var slideIndex = 0;
+        var timeoutVar;  // 記錄計時器 ID
 
-// Initialize
-var slideslen = $('.mySlides').length;
-//console.log(slideslen);
+        // 初始化當前輪播
+        showSlides(slideIndex);
 
-var slideIndex = 0;
+        // prev 和 next 操作
+        $carousel.find('.prev').click(function(){
+            plusSlides(-1);
+        });
 
-var timeoutVar; /* interval variable */
+        $carousel.find('.next').click(function(){
+            plusSlides(1);
+        });
 
-showSlides(slideIndex);
+        // 圓點操作
+        dots.click(function(){
+            var i = $(this).index();
+            currentSlide(i);
+        });
 
+        // 顯示下一張或上一張
+        function plusSlides(n) {
+            clearTimeout(timeoutVar);  // 重置計時器
+            showSlides(slideIndex += n);
+        }
 
+        // 根據圓點顯示對應圖片
+        function currentSlide(n) {
+            clearTimeout(timeoutVar);  // 重置計時器
+            showSlides(slideIndex = n);
+        }
 
-$(document).ready(function(){ // begin document.ready block
+        // 自動輪播
+        function autoSlide(){
+            clearTimeout(timeoutVar);  // 重置計時器
+            slideIndex++;
+            showSlides(slideIndex);
+        }
 
-    var length = $('.mySlides').length;
-    console.log(length);
+        // 顯示當前圖片
+        function showSlides(n) {
+            if (slideIndex >= slides.length) { slideIndex = 0; } // 當前圖片超出範圍，從頭開始
+            if (slideIndex < 0) { slideIndex = slides.length - 1; } // 當前圖片小於0，顯示最後一張圖片
 
-    // prev and next actions
+            slides.hide(); // 隱藏所有圖片
+            dots.removeClass('active'); // 移除所有圓點的 active 類別
+            slides.eq(slideIndex).show(); // 顯示當前圖片
+            dots.eq(slideIndex).addClass('active'); // 為當前圓點添加 active 類別
 
-    $('.prev').click(function(){
-        plusSlides(-1);
+            // 設置自動輪播
+            timeoutVar = setTimeout(autoSlide, 5000); // 每5秒切換圖片
+        }
     });
-
-    $('.next').click(function(){
-        plusSlides(1);
-    });
-
-    // dots action
-
-    $('.dot').click(function(){
-        var i = $(this).index();
-        //console.log(i);
-        currentSlide(i);
-    });
-
-}); //end document.ready block
-
-
-// Next/previous controls
-function plusSlides(n) {
-  clearTimeout(timeoutVar); // resets timeout so it doesn't go crazy
-  showSlides(slideIndex += n);
-}
-
-// Thumbnail image controls
-function currentSlide(n) {
-  clearTimeout(timeoutVar); // resets timeout so it doesn't go crazy
-  showSlides(slideIndex = n);
-}
-
-function autoSlide(){
-    clearTimeout(timeoutVar); // resets timeout so it doesn't go crazy
-    slideIndex++;
-    showSlides(slideIndex);
-}
-
-function showSlides(n) {
-
-    // console.log(slideIndex);
-
-    // to remove back arrow on first slide
-    if (slideIndex == 0){
-        $('.prev').hide();
-    } else {
-        $('.prev').show();
-    }
-  
-
-  // to make slideshow loop
-  if (n > slideslen-1) {slideIndex = 0} 
-  if (n < 0) {slideIndex = slideslen}
-  
-  $('.mySlides').each(function(i){
-      $(this).hide();
-  });
-
-  $('.dot').each(function(i){
-      $(this).removeClass('active');
-  });
-
-  console.log(slideIndex);
-
-  $('.mySlides').eq(slideIndex).show();
-  $('.dot').eq(slideIndex).addClass('active');
-
-  //put this in if you want it to rotate automatically
-  timeoutVar = setTimeout(autoSlide, 5000); // Change image every 2 seconds
-
-}
-
-
+});
 
